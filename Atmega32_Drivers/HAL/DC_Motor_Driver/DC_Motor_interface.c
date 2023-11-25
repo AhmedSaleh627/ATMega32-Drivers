@@ -1,0 +1,45 @@
+/*
+ * DC_Motor_interface.c
+ *
+ * Created: 9/30/2023 3:28:04 PM
+ *  Author: Ahmed saleh
+ */ 
+#include "../../LIB/STD_Type.h"
+#include "../../LIB/BITMATH.h"
+#include "../../MCAL/DIO/DIO_interface.h"
+#include "DC_Motor_Config.h"
+void DCMOTOR_Vid_FORWARD(void)
+{
+	/* Set Motor Direction */
+	DIO_Vid_Set_Pin_Dir(DCMOTOR_EN1_PORT,DCMOTOR_EN1_PIN,OUTPUT);
+	DIO_Vid_Set_Pin_Dir(DCMOTOR_H1_PORT,DCMOTOR_H1_PIN,OUTPUT);
+	DIO_Vid_Set_Pin_Dir(DCMOTOR_H2_PORT,DCMOTOR_H2_PIN,OUTPUT);
+	/* SET VALUE */
+	DIO_Vid_Set_Pin_Val(DCMOTOR_EN1_PORT,DCMOTOR_EN1_PIN,HIGH);
+	DIO_Vid_Set_Pin_Val(DCMOTOR_H1_PORT,DCMOTOR_H1_PIN,HIGH);
+	DIO_Vid_Set_Pin_Val(DCMOTOR_H2_PORT,DCMOTOR_H2_PIN,LOW);
+}
+void DCMOTOR_Vid_REVERSE(void)
+{
+	
+	/* Set Motor Direction */
+	DIO_Vid_Set_Pin_Dir(DCMOTOR_EN1_PORT,DCMOTOR_EN1_PIN,OUTPUT);
+	DIO_Vid_Set_Pin_Dir(DCMOTOR_H1_PORT,DCMOTOR_H1_PIN,OUTPUT);
+	DIO_Vid_Set_Pin_Dir(DCMOTOR_H2_PORT,DCMOTOR_H2_PIN,OUTPUT);
+	/* SET VALUE */
+	DIO_Vid_Set_Pin_Val(DCMOTOR_EN1_PORT,DCMOTOR_EN1_PIN,HIGH);
+	DIO_Vid_Set_Pin_Val(DCMOTOR_H1_PORT,DCMOTOR_H1_PIN,LOW);
+	DIO_Vid_Set_Pin_Val(DCMOTOR_H2_PORT,DCMOTOR_H2_PIN,HIGH);	
+}
+void DCMOTOR_Vid_STOP(void)
+{
+	
+	/* Set Motor Direction */
+	DIO_Vid_Set_Pin_Dir(DCMOTOR_EN1_PORT,DCMOTOR_EN1_PIN,OUTPUT);
+	DIO_Vid_Set_Pin_Dir(DCMOTOR_H1_PORT,DCMOTOR_H1_PIN,OUTPUT);
+	DIO_Vid_Set_Pin_Dir(DCMOTOR_H2_PORT,DCMOTOR_H2_PIN,OUTPUT);
+	/* SET VALUE */
+	DIO_Vid_Set_Pin_Val(DCMOTOR_EN1_PORT,DCMOTOR_EN1_PIN,LOW);
+	DIO_Vid_Set_Pin_Val(DCMOTOR_H1_PORT,DCMOTOR_H1_PIN,LOW);
+	DIO_Vid_Set_Pin_Val(DCMOTOR_H2_PORT,DCMOTOR_H2_PIN,LOW);
+}
