@@ -11,6 +11,5 @@
 #### SPI
 #### UART
 #### TWI
-## 
 #### External EEPROM
 
